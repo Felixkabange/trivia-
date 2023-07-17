@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+        // Part 1: Multiple Choice
+        const germanyBtn = document.getElementById('germany');
+        const argentinaBtn = document.getElementById('argentina');
+        const brazilBtn = document.getElementById('brazil');
+        const italyBtn = document.getElementById('italy');
+        const feedbackPart1 = document.getElementById('feedbackPart1');
+
+        germanyBtn.addEventListener('click', function() {
+            germanyBtn.style.backgroundColor = 'red';
+            feedbackPart1.textContent = 'Incorrect';
+        });
+
+        argentinaBtn.addEventListener('click', function() {
+            argentinaBtn.style.backgroundColor = 'red';
+            feedbackPart1.textContent = 'Incorrect';
+        });
+
+        brazilBtn.addEventListener('click', function() {
+            brazilBtn.style.backgroundColor = 'green';
+            feedbackPart1.textContent = 'Correct!';
+        });
+
+        italyBtn.addEventListener('click', function() {
+            italyBtn.style.backgroundColor = 'red';
+            feedbackPart1.textContent = 'Incorrect';
+        });
+
+        // Part 2: Free Response
+        const submitBtn = document.getElementById('submitBtn');
+        const answerInput = document.getElementById('userInput');
+        const feedbackPart2 = document.getElementById('feedbackPart2');
+        const correctAnswer = "Lionel Messi";
+
+        submitBtn.addEventListener('click', function() {
+            const userAnswer = answerInput.value;
+
+            if (userAnswer === correctAnswer) {
+                answerInput.style.backgroundColor = 'green';
+                feedbackPart2.textContent = 'Correct!';
+            } else {
+                answerInput.style.backgroundColor = 'red';
+                feedbackPart2.textContent = 'Incorrect';
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice</h2>
+            <hr>
+            <h3>Which country has won the most FIFA World Cup titles as of 2021?</h3>
+            <button id="germany">Germany</button>
+            <button id="argentina">Argentina</button>
+            <button id="brazil">Brazil</button>
+            <button id="italy">Italy</button>
+            <p id="feedbackPart1"></p>
+        </div>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <h3>Which player in the history has the most Ballon d'Or awards in the history of soccer?</h3>
+            <input type="text" id="userInput" placeholder="Enter your answer">
+            <button id="submitBtn">Submit</button>
+            <p id="feedbackPart2"></p>
+        </div>
+    </div>
+</body>
+</html>
